@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private final String TAG = "MainActivity";
     private Button btnLogout;
+    private Button btnPost;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +29,20 @@ public class MainActivity extends AppCompatActivity {
                 goLogin();
             }
         });
+        btnPost = findViewById(R.id.btnPost);
+        btnPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goPost();
+            }
+        });
+    }
+
+    private void goPost() {
+        Log.d(TAG, "Navigating to the post page");
+        Intent i = new Intent(this, PostActivity.class);
+        startActivity(i);
+        finish();
     }
 
     private void goLogin() {
