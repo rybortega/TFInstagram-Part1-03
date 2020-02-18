@@ -54,4 +54,18 @@
         android:text="@string/login"
         android:textColor="#FFFFFF" />
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <Button
+        android:id="@+id/btnSingUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="#4CAF50"
+        android:text="@string/sign_up"
+        android:textColor="#FFFFFF" />
+
 </LinearLayout>
