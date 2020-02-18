@@ -20,6 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etUsername;
     private EditText etPassword;
     private Button btnLogin;
+    private ParseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,14 +44,21 @@ public class LoginActivity extends AppCompatActivity {
         ParseUser.logInInBackground(username, password, new LogInCallback() {
             @Override
             public void done(ParseUser user, ParseException e) {
-                if (e != null) {
+                if (user != null) {
+                    goMainActivity();
+                } else{
                     Log.e(TAG, "Issue with login in");
-                    e.printStackTrace();
                     return;
                 }
-                goMainActivity();
             }
         });
+
+        currentUser = ParseUser.getCurrentUser();
+        if (currentUser != null) {
+            // do stuff with the user
+        } else {
+            // show the signup or login screen
+        }
     }
 
     private void goMainActivity() {
