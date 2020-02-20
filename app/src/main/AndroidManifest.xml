@@ -28,7 +28,7 @@
                 android:resource="@xml/fileprovider" />
 
         </provider>
-        <activity android:name=".PostActivity"></activity>
+
         <activity android:name=".MainActivity" />
         <activity
             android:name=".LoginActivity"
