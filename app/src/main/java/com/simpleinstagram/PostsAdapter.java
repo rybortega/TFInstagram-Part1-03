@@ -38,6 +38,16 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         holder.bind(post);
     }
 
+    public void clear() {
+        posts.clear();
+        notifyDataSetChanged();
+    }
+
+    public void addAll(List<Post> list) {
+        posts.addAll(list);
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getItemCount() {
         return posts.size();
@@ -63,8 +73,6 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
                 Glide.with(context).load(image.getUrl()).into(ivImage);
             }
             tvDescription.setText(post.getDescription());
-
-
         }
     }
 }

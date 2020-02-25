@@ -43,7 +43,6 @@ public class ComposeFragment extends Fragment {
     private Button btnCaptureImage;
     private ImageView ivPostImage;
     private Button btnSubmit;
-    private Button btnLogout;
 
     public final static int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 1034;
     public String photoFileName = "photo.jpg";
