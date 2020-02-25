@@ -58,12 +58,15 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         private TextView tvHandle;
         private ImageView ivImage;
         private TextView tvDescription;
+        private TextView createdAt;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvHandle = itemView.findViewById(R.id.tvHandle);
             ivImage = itemView.findViewById(R.id.ivImage);
             tvDescription = itemView.findViewById(R.id.tvDescription);
+            createdAt = itemView.findViewById(R.id.createdAt);
         }
 
         public void bind(Post post) {
@@ -73,6 +76,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
                 Glide.with(context).load(image.getUrl()).into(ivImage);
             }
             tvDescription.setText(post.getDescription());
+            createdAt.setText(post.getCreatedAt().toString());
         }
     }
 }

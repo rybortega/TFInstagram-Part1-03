@@ -26,11 +26,12 @@ import java.util.List;
 public class PostsFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
     public static String TAG = "PostsFragment";
-    SwipeRefreshLayout swipeContainer;
+    protected SwipeRefreshLayout swipeContainer;
 
-    private RecyclerView rvPosts;
+    protected RecyclerView rvPosts;
     protected PostsAdapter adapter;
     protected List<Post> myPosts;
+
 
     @Nullable
     @Override
